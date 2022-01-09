@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Группа "ДАЙПЯТЬ"</title>
+    <meta name="keywords" content="Группа &quotДАЙПЯТЬ&quot" />
+    <meta name="description" content="Группа &quotДАЙПЯТЬ&quot" />
+    <link rel="shortcut icon" href="highfive.ico" type="image/x-icon" />
+    <link rel="icon" href="highfive.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" media="screen" href="css/mplayer.css"/>
+
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/jquery-ui.js"></script>
+    <script type="text/javascript" src="js/perfect-scrollbar.jquery.min.js"></script>
+    <script type="text/javascript" src="js/mplayer.js"></script>
+</head>
+<body>
+<div class="page">
+    <div class="hat">
+        <div class="menu">
+            <span class="logo">ДАЙПЯТЬ!</span>
+            <img id="five" src="img/five.png">
+        </div>
+
+        <div class="menu">
+            <button id="main" class="menu_but">Главная</button>
+            <button id="donation" class="menu_but">Сборы</button>
+            <button id="albums" class="menu_but">Альбомы</button>
+            <div class="contacts menu">
+                <a href="https://vk.com/rifmatizm" target="_blank"><img id="vk" src="img/vk.svg"></a>
+                <a href="https://www.youtube.com/channel/UC347WUHsLnwlBMnDKhd1usA" target="_blank"><img id="youtube" src="img/youtube.svg"></a>
+            </div>
+        </div>
+    </div>
+    <section class="start">
+        <div class="full-high">
+            <div class="text">
+                <span class="r1">Группа «ДАЙПЯТЬ!» ранее была известна под названием «Рифматизм». Изменение названия связано как со сменой состава команды, так и с коренным изменением отношения к музыке.
+                        <br>Ныне этот творческий коллектив под управлением известного музыканта Константина Кувайцева является одним из наиболее ярких представителей российского блюз-рока.
+                </span>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="donations">
+            <div class="donations-first">
+                <div class="donations-text">
+                    <span>
+                        Недавно группа приступила к работе над студийным альбомом, на запись которого и собирает деньги на этой платформе. По предварительным расчётам, сумма, необходимая для записи, сведения, мастеринга, издания альбома и его продвижения составляет 2 млн. рублей. Плановое окончание работы: декабрь 2022 года.
+                        <br>Ниже представлена демо запись песни из нового альбома.
+                    </span>
+                    <!--                <span>-->
+                    <!--                    <b>Внимание! 100 человек, инвестировавших наибольшие суммы в этот проект, получат эксклюзивные издания альбома с автографами всех музыкантов.</b>-->
+                    <!--                </span>-->
+                    <audio id="audio" controls src="mp3/02_avtoportret_mastering.wav"></audio>
+                </div>
+                <div class="fees">
+                    <div>
+                        <span class="sum-sum">0₽<br></span>
+                        <div class="sum">
+                            <span>Из 2 000 000₽</span>
+                            <span>0%</span>
+                        </div>
+                    </div>
+                    <button class="donate">Пожертвовать</button>
+                </div>
+            </div>
+            <div id="content">
+                <canvas id="canvas"></canvas>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="albums">
+            <div id="alb1" class="album">
+                <div class="album_1">
+                    <div class="mplayer mp1" >
+                        <div class="mplayer__front-header">
+                            <div class="mplayer__front-header-next-bg"></div>
+                            <div class="mplayer__front-header-current-bg"></div>
+                            <div class="mplayer__front-btn-playlist"></div>
+                            <div class="mplayer__volume">
+                                <div class="mplayer__volume-icon"></div>
+                                <div class="mplayer__volume-slider"></div>
+                            </div>
+                            <div class="mplayer__cover-art">
+                                <img class="mplayer__cover-art-next" src="#" alt="cover art">
+                                <img class="mplayer__cover-art-current" src="#" alt="cover art">
+                            </div>
+                            <div class="mplayer__toolbar">
+                                <div class="mplayer__prev"></div>
+                                <div id="play1" class="mplayer__pause"></div>
+                                <div class="mplayer__next"></div>
+                            </div>
+                            <div class="mplayer__front-body">
+                                <div class="mplayer__front-row">
+                                    <div class="mplayer__front-title-wrap">
+                                        <div class="mplayer__front-title-track"></div>
+                                        <div class="mplayer__front-title-author"></div>
+                                    </div>
+                                </div>
+                                <div class="mplayer__front-row">
+                                    <div class="mplayer__long">
+                                        <div class="mplayer__current-time">0:00</div>
+                                        <div class="mplayer__long-slider"></div>
+                                        <div class="mplayer__all-time"></div>
+                                    </div>
+                                </div>
+                                <div class="mplayer__front-row">
+                                    <!--                            <div class="mplayer__order-btn-wrap">-->
+                                    <!--                                <div class="mplayer__repeat"></div>-->
+                                    <!--                                <div class="mplayer__random"></div>-->
+                                    <!--                            </div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mplayer__playlist ">
+                            <div class="mplayer__playlist-header">
+                                <div class="mplayer__playlist-btn-front"></div>
+                                <div class="mplayer__playlist-header-title">
+                                    Playlist
+                                </div>
+                            </div>
+                            <div class="mplayer__playlist-body">
+                                <div class="mplayer__playlist-body-next-bg"></div>
+                                <div class="mplayer__playlist-body-current-bg"></div>
+                                <div class="mplayer__playlist-body-inner js-perfect-scrollbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        "use strict";
+                        $(function () {
+                            $('.mp1').mplayer({
+                                'volume': 80,
+                                'playlist': [
+                                    {
+                                        "title": "Точки",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_1.mp3",
+                                        "duration": "243"
+                                    },
+                                    {
+                                        "title": "Дождь",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_2.mp3",
+                                        "duration": "313"
+                                    },
+                                    {
+                                        "title": "Осенний джаз",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_3.mp3",
+                                        "duration": "207"
+                                    },
+                                    {
+                                        "title": "Мелодия",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_4.mp3",
+                                        "duration": "276"
+                                    },
+                                    {
+                                        "title": "Таракан",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_5.mp3",
+                                        "duration": "410"
+                                    },
+                                    {
+                                        "title": "Каэтано",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_6.mp3",
+                                        "duration": "188"
+                                    },
+                                    {
+                                        "title": "Время",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_7.mp3",
+                                        "duration": "554"
+                                    },
+                                    {
+                                        "title": "Бери гитару, мама",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_8.mp3",
+                                        "duration": "180"
+                                    },
+                                    {
+                                        "title": "Гимн",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_9.mp3",
+                                        "duration": "243"
+                                    },
+                                    {
+                                        "title": "Снег",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_10.mp3",
+                                        "duration": "243"
+                                    },
+                                    {
+                                        "title": "Стерва",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_11.mp3",
+                                        "duration": "329"
+                                    },
+                                    {
+                                        "title": "Осень",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_12.mp3",
+                                        "duration": "241"
+                                    },
+                                    {
+                                        "title": "С тобой и без тебя",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_13.mp3",
+                                        "duration": "401"
+                                    },
+                                    {
+                                        "title": "Да-да!",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk1.jpg",
+                                        "background": "img/disk1.jpg",
+                                        "pfile": "mp3/music_01/Track_14.mp3",
+                                        "duration": "286"
+                                    },
+                                ]
+                            });
+                        });
+                    </script>
+
+                    <img id="vyn1" class="vinyl" src="img/vinyl.png">
+                </div>
+                <div class="more">
+                    <details>
+                        <summary>Об альбоме</summary>
+                        <pre>Дмитрий Григорьев - гитара, вокал, бэк-вокал
+Константин Цивин - клавиши, вокал (6,11,14), бэк-вокал
+Олег Киселев - ударные, вокал (14)
+Илья Денисов - гитара, вокал (13)
+Владимир Думбраван - бас, вокал (3,9,14)
+Марк Латышев - труба, флюгельгорн
+
+Звукорежиссер и саундпродюсер: Евгений Турута
+Художник: Леонид Росси
+Фото: Андрей Комаров
+Студия звукозаписи: «Дом Тысячи Звуков»
+Дизайн и тираж: ООО «Невский ракурс»
+Правовая поддержка: ООО «Деканте»</pre>
+                    </details>
+                </div>
+            </div>
+
+            <div class="space"></div>
+
+            <div id="alb2" class="album">
+                <div class="album_2">
+                    <div class="mplayer mp2">
+                        <div class="mplayer__front-header">
+                            <div class="mplayer__front-header-next-bg"></div>
+                            <div class="mplayer__front-header-current-bg"></div>
+                            <div class="mplayer__volume">
+                                <div class="mplayer__volume-icon"></div>
+                                <div class="mplayer__volume-slider"></div>
+                            </div>
+                            <div class="mplayer__front-btn-playlist"></div>
+                            <div class="mplayer__cover-art">
+                                <img class="mplayer__cover-art-next" src="#" alt="cover art">
+                                <img class="mplayer__cover-art-current" src="#" alt="cover art">
+                            </div>
+                            <div class="mplayer__toolbar">
+                                <div class="mplayer__prev"></div>
+                                <div id="play2" class="mplayer__pause"></div>
+                                <div class="mplayer__next"></div>
+                            </div>
+                            <div class="mplayer__front-body">
+                                <div class="mplayer__front-row">
+                                    <div class="mplayer__front-title-wrap">
+                                        <div class="mplayer__front-title-track"></div>
+                                        <div class="mplayer__front-title-author"></div>
+                                    </div>
+                                </div>
+                                <div class="mplayer__front-row">
+                                    <div class="mplayer__long">
+                                        <div class="mplayer__current-time">0:00</div>
+                                        <div class="mplayer__long-slider"></div>
+                                        <div class="mplayer__all-time"></div>
+                                    </div>
+                                </div>
+                                <div class="mplayer__front-row">
+                                    <!--                            <div class="mplayer__order-btn-wrap">-->
+                                    <!--                                <div class="mplayer__repeat"></div>-->
+                                    <!--                                <div class="mplayer__random"></div>-->
+                                    <!--                            </div>-->
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mplayer__playlist ">
+                            <div class="mplayer__playlist-header">
+                                <div class="mplayer__playlist-btn-front"></div>
+                                <div class="mplayer__playlist-header-title">
+                                    Playlist
+                                </div>
+                            </div>
+                            <div class="mplayer__playlist-body">
+                                <div class="mplayer__playlist-body-next-bg"></div>
+                                <div class="mplayer__playlist-body-current-bg"></div>
+                                <div class="mplayer__playlist-body-inner js-perfect-scrollbar"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <script type="text/javascript">
+                        "use strict";
+                        $(function () {
+                            $('.mp2').mplayer({
+                                'volume': 80,
+                                'playlist': [
+                                    {
+                                        "title": "Гони вперед!",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_1.mp3",
+                                        "duration": "179"
+                                    },
+                                    {
+                                        "title": "Она его любит",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_2.mp3",
+                                        "duration": "129"
+                                    },
+                                    {
+                                        "title": "Напиток из снов",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_3.mp3",
+                                        "duration": "240"
+                                    },
+                                    {
+                                        "title": "Рок-н-ролл в миноре",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_4.mp3",
+                                        "duration": "133"
+                                    },
+                                    {
+                                        "title": "Лирическая",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_5.mp3",
+                                        "duration": "233"
+                                    },
+                                    {
+                                        "title": "Мечта",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_6.mp3",
+                                        "duration": "232"
+                                    },
+                                    {
+                                        "title": "Жаль",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_7.mp3",
+                                        "duration": "353"
+                                    },
+                                    {
+                                        "title": "Я знал его",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_8.mp3",
+                                        "duration": "316"
+                                    },
+                                    {
+                                        "title": "Без тебя",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_9.mp3",
+                                        "duration": "441"
+                                    },
+                                    {
+                                        "title": "Эспрессо",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_10.mp3",
+                                        "duration": "226"
+                                    },
+                                    {
+                                        "title": "Пива налей!",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_11.mp3",
+                                        "duration": "219"
+                                    },
+                                    {
+                                        "title": "Бросай курить!",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_12.mp3",
+                                        "duration": "237"
+                                    },
+                                    {
+                                        "title": "Картинки на луне",
+                                        "author": "RIFMAтизм",
+                                        "cover": "img/disk2.jpg",
+                                        "background": "img/disk2.jpg",
+                                        "pfile": "mp3/music_02/Track_13.mp3",
+                                        "duration": "438"
+                                    },
+                                ]
+                            });
+                        });
+                    </script>
+
+                    <img id="vyn2" class="vinyl" src="img/vinyl2.png">
+                </div>
+                <div class="more">
+                    <details>
+                        <summary>Об альбоме</summary>
+                        <pre>Владимир Думбраван - бас, вокал (1, 7)
+Дмитрий Григорьев - гитара, вокал (3, 6, 9,12,13), бэк-вокал
+Илья Денисов - гитара, бэк-вокал
+Константин Цивин - клавишные, вокал (2,4, 5, 8,10,11), бэк-вокал
+Олег Киселев - ударные
+
+Приглашенные музыканты:
+Евгений Турута - тамбурин (4), гитара (8), клавишные (13)
+Елена Занозина - вокал (3,4, 6, 9)</pre>
+                    </details>
+                </div>
+            </div>
+
+            <div class="space1"></div>
+
+        </div>
+    </section>
+</div>
+<script src="js/script.js"></script>
+</body>
+</html>
