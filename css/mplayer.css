@@ -609,3 +609,12 @@ textarea:active {
 :focus {
     outline: none;
 }
+
+@media only screen and (orientation:portrait) {
+    .mplayer {
+        width: 380px;
+    }
+    .mplayer__front-header {
+        height: 380px;
+    }
+}

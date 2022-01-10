@@ -101,7 +101,7 @@ document.querySelectorAll(".menu_but").forEach(function (e, index) {
 })
 
 document.querySelector(".page").addEventListener("wheel", function (e) {
-    console.log(e)
+    // console.log(e)
     if (e.deltaY > 0) {
         window.scrollTo({
             top: e.view.pageYOffset + window.innerHeight,

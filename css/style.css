@@ -54,6 +54,10 @@ span {
     margin-left: 15px;
 }
 
+.space0 {
+    width: 5%;
+}
+
 .space {
     width: 20%;
 }
@@ -212,12 +216,22 @@ span {
 }
 
 .donations-text {
-    width: 32%;
+    /*width: 32%;*/
     height: 100%;
-    margin-right: 100px;
+    /*margin-right: 100px;*/
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+
+    width: 50%;
+    text-align: center;
+}
+
+.fee {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
 }
 
 .fees {
@@ -240,13 +254,15 @@ span {
 }
 
 .donate {
-    margin-top: 100px;
+    /*margin-top: 100px;*/
     width: 300px;
     height: 54px;
     border-radius: 50px;
     font-size: 18px;
     background-color: white;
     border: none;
+
+    margin-left: 60px;
 }
 
 .donate:hover {
@@ -363,4 +379,68 @@ details{
     display:block;
     margin-bottom: .5rem;
     color: white;
+}
+
+@media only screen and (orientation:portrait) {
+    span {
+        font-size:50px;
+    }
+
+    .hat {
+        height: 100px;
+    }
+
+    .menu button {
+        display: none;
+        /*font-size: 50px;*/
+    }
+
+    #vk,
+    #youtube {
+        height: 50px;
+        width: 50px;
+    }
+
+    .text {
+        width: 85%;
+    }
+
+    .r1 {
+        font-size: 50px;
+    }
+
+    .donations-text {
+        width: 75%;
+    }
+
+    .fee {
+        flex-direction: column;
+        margin-top:100px;
+    }
+
+    .donate {
+        margin-left: 0;
+        margin-top: 30px;
+        width: 100%;
+        font-size: 50px;
+        height: 90px;
+    }
+
+    #audio {
+        width: 100%;
+        /*height: 90px;*/
+    }
+
+    .albums {
+        /*display: block;*/
+        flex-direction: column;
+    }
+
+    .space {
+        height: 15%;
+    }
+
+    .donations-first {
+        flex-direction: column;
+    }
 }
