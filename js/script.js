@@ -58,7 +58,6 @@ renderer = function() {
     renderFrame();
     document.getElementById("audio").removeEventListener('play', renderer)
 }
-document.body.style.overflow = "hidden"
 
 document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".menu_but")[Math.round(window.pageYOffset / window.innerHeight)].classList.add("but_active")
@@ -137,4 +136,4 @@ document.querySelector(".page").addEventListener("wheel", function (e) {
 
 if(window.matchMedia("only screen and (orientation:portrait)").matches) {
     document.getElementById("audio_source").src = "mp3/02_avtoportret_mastering.mp3"
-}
+} else document.body.style.overflow = "hidden"
