@@ -79,7 +79,7 @@ document.getElementById("play2").addEventListener('click', function (){
 
 document.querySelectorAll(".menu_but").forEach(function (e, index) {
     e.addEventListener('click', (ev) => {
-        console.log(ev)
+        // console.log(ev)
 
         window.scrollTo({
             top: window.innerHeight * index,

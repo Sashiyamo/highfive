@@ -201,11 +201,18 @@
 
     $(document).ready(function () {
         $('.mplayer__playlist').css('display', 'none');
-        $('.mplayer__playlist-btn-front').on('click',function () {
-            $('.mplayer__playlist').fadeToggle();
+        $('.pl_bf1').on('click',function () {
+            $('.pl1').fadeToggle();
         });
-        $('.mplayer__front-btn-playlist').on('click',function () {
-            $('.mplayer__playlist').fadeToggle();
+        $('.pl_b1').on('click',function () { //playlist 1
+            $('.pl1').fadeToggle();
+            changeSize(); //perfectScrollbar
+        });
+        $('.pl_bf2').on('click',function () {
+            $('.pl2').fadeToggle();
+        });
+        $('.pl_b2').on('click',function () { //playlist 2
+            $('.pl2').fadeToggle();
             changeSize(); //perfectScrollbar
         });
         $('.mplayer__random').on('click',function () {
