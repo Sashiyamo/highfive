@@ -284,7 +284,7 @@ span.ui-slider-handle {
 }
 
 .mplayer__long {
-    overflow: hidden;
+    /*overflow: hidden;*/
     margin-top: 3px;
     white-space: nowrap;
 }
@@ -500,6 +500,14 @@ span.ui-slider-handle {
     left: 0;
     overflow: hidden;
 }
+.mplayer__playlist-body1 {
+    position: absolute;
+    top: 40px; /* .mplayer__playlist-header { height: 40px; */
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: hidden;
+}
 .mplayer__playlist-body-current-bg,
 .mplayer__playlist-body-next-bg {
     position: absolute;
@@ -612,9 +620,127 @@ textarea:active {
 
 @media only screen and (orientation:portrait) {
     .mplayer {
-        width: 380px;
+        width: 600px;
+        /*margin-right: 40px;*/
+
     }
+
     .mplayer__front-header {
-        height: 380px;
+        height: 600px;
+    }
+
+    .mplayer__front-title-author {
+        height: 28px;
+        margin-top: 5px;
+        font-size: 40px;
+        margin-bottom: 10px;
+    }
+
+    .mplayer__front-title-track {
+        padding-bottom: 6px;
+        font-size: 32px;
+    }
+
+    .mplayer__current-time,
+    .mplayer__all-time {
+        font-size: 20px;
+    }
+
+    .mplayer__long-slider {
+        width: 330px;
+
+    }
+
+    summary {
+        font-size: 20px;
+        padding: 0 0 0 30px;
+        margin-right: 20px;
+    }
+
+    summary::before {
+        top: 0;
+    }
+
+    pre {
+        font-size: 23px;
+    }
+
+    .mplayer__cover-art {
+        width: 300px;
+        height: 300px;
+        margin-top: 80px;
+    }
+
+    .mplayer__prev,
+    .mplayer__next {
+        width: 90px;
+        height: 90px;
+    }
+
+    .mplayer__prev:after {
+        background-size: 30px;
+    }
+
+    .mplayer__next:after {
+        background-size: 30px;
+    }
+
+    .mplayer__pause {
+        width: 130px;
+        height: 130px;
+    }
+
+    .mplayer__pause::after {
+        background-size: 40px;
+    }
+
+    .mplayer__pause.isplay:after {
+        background-size: 40px;
+    }
+
+    .mplayer__toolbar {
+        top: 160px;
+    }
+
+    #vin1,
+    #vin2 {
+        display: none;
+    }
+
+    .mplayer__long-slider, .mplayer__volume-slider {
+        height: 10px;
+    }
+
+    .mplayer__long-slider .ui-slider-handle, .mplayer__volume-slider .ui-slider-handle {
+        top: -8px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA4AAAAOCAMAAAAolt3jAAAAQlBMVEX///8nJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJycnJyfIyMhoaGj19fX09PRnZ2eXl5f29vZpaWn///8tMPenAAAADHRSTlMAEBESSIK/4uPk8/XfI2mXAAAAYUlEQVQIHQXBiRHDIAwAMPkh1/23bWOgUiAr2ty5BN0N3j1KfzJVWvqcjvIUiF+fWs9qIE+cDANwRbYCKJ0AuOTYAMfkFQDhlohMsGemrt79zfvd47eDXgVmRqAylvfuwx98vCoxuPuEVQAAAABJRU5ErkJggg==);
+        background-size: cover;
+        width: 20px;
+        height: 20px;
+    }
+
+    .mplayer__front-btn-playlist {
+        width: 30px;
+        height: 30px;
+        background: 50% 50% no-repeat url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAANCAYAAACgu+4kAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA2ZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDo2QTA1MDgxMTUxMEFFNzExODVENkEzMDIwRkIwNEE5MCIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDo4OEQ5MERBNzE1QzkxMUU3QkUwQkEyOEE0OEJERTRCMCIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDo4OEQ5MERBNjE1QzkxMUU3QkUwQkEyOEE0OEJERTRCMCIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M2IChXaW5kb3dzKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjk1QzRDNzA2MDQwQkU3MTE5QUU3OTIzODRFQkRGOTg1IiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjZBMDUwODExNTEwQUU3MTE4NUQ2QTMwMjBGQjA0QTkwIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ta8WQgAAADdJREFUeNpi/A8EDBDACKVhfKIAEwOFgIWRkdEPbC3UITA+sYAR4QPyAOVeQAq00UAcuYEIEGAAZy4Z8//RM2YAAAAASUVORK5CYII=);
+        background-size: 60%;
+    }
+
+    .mplayer__playlist-body-inner span {
+        font-size: 20px;
+    }
+
+    .mplayer__playlist-header-title {
+        font-size: 20px;
+    }
+
+    .mplayer__volume-icon {
+        width: 30px;
+        height: 30px;
+        background-size: 100%;
+    }
+
+    .mplayer__volume-slider {
+        margin-top: 4px;
     }
 }

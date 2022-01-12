@@ -76,10 +76,38 @@ document.getElementById("play1").addEventListener('click', function (){
     } else document.getElementById("vyn1").classList.add("animated")
 })
 
+document.querySelectorAll(".but_group1").forEach(function (e) {
+    e.addEventListener('click', function () {
+        if (!document.getElementById("vyn1").classList.contains("animated")) {
+            document.getElementById("vyn1").classList.add("animated")
+        }
+    })
+})
+
+document.querySelector(".mplayer__playlist-body").addEventListener('click', function () {
+    if (!document.getElementById("vyn1").classList.contains("animated")) {
+        document.getElementById("vyn1").classList.add("animated")
+    }
+})
+
 document.getElementById("play2").addEventListener('click', function (){
     if (document.getElementById("vyn2").classList.contains("animated")) {
         document.getElementById("vyn2").classList.remove("animated")
     } else document.getElementById("vyn2").classList.add("animated")
+})
+
+document.querySelectorAll(".but_group2").forEach(function (e) {
+    e.addEventListener('click', function () {
+        if (!document.getElementById("vyn2").classList.contains("animated")) {
+            document.getElementById("vyn2").classList.add("animated")
+        }
+    })
+})
+
+document.querySelector(".mplayer__playlist-body1").addEventListener('click', function () {
+    if (!document.getElementById("vyn2").classList.contains("animated")) {
+        document.getElementById("vyn2").classList.add("animated")
+    }
 })
 
 document.querySelectorAll(".menu_but").forEach(function (e, index) {
@@ -105,7 +133,7 @@ document.querySelectorAll(".menu_but").forEach(function (e, index) {
 })
 
 document.querySelector(".page").addEventListener("wheel", function (e) {
-     console.log(e)
+     // console.log(e)
     if (e.deltaY > 0) {
         window.scrollTo({
             top: window.innerHeight * Math.round(e.view.pageYOffset / window.innerHeight + 1),
@@ -114,7 +142,7 @@ document.querySelector(".page").addEventListener("wheel", function (e) {
         document.querySelectorAll(".menu_but").forEach(function (e, i) {
             if (Math.round(window.pageYOffset / window.innerHeight) === i - 1) {
                 e.classList.add("but_active")
-            } else e.classList.remove("but_active")
+            } else if (i < 2) e.classList.remove("but_active")
         })
     } else {
         window.scrollTo({
@@ -124,7 +152,7 @@ document.querySelector(".page").addEventListener("wheel", function (e) {
         document.querySelectorAll(".menu_but").forEach(function (e, i) {
             if (Math.round(window.pageYOffset / window.innerHeight) === i + 1) {
                 e.classList.add("but_active")
-            } else e.classList.remove("but_active")
+            } else if (i > 0) e.classList.remove("but_active")
         })
     }
 })

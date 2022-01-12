@@ -59,7 +59,7 @@ span {
 }
 
 .space {
-    width: 20%;
+    width: 15%;
 }
 
 .space1 {
@@ -298,8 +298,8 @@ span {
     margin-right: 15px;
 }
 
-#go::-webkit-input-placeholder {
-    font-size: 30px;
+::-webkit-input-placeholder {
+    font-size: 16px;
 }
 
 #go:hover {
@@ -307,8 +307,10 @@ span {
 }
 
 #donate-value {
-    margin-left: 30px;
+    margin-left: 40px;
     border: none;
+    font-size: 18px;
+    width: 200px;
 }
 
 .none {
