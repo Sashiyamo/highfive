@@ -429,7 +429,7 @@ details{
 
 @media only screen and (orientation:portrait) {
     span {
-        font-size:50px;
+        font-size:40px;
     }
 
     .hat {
@@ -453,7 +453,7 @@ details{
     }
 
     .r1 {
-        font-size: 50px;
+        font-size: 40px;
     }
 
     .donations-text {
