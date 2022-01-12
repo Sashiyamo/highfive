@@ -12,7 +12,10 @@ span {
     font-size: 20px;
 }
 
-
+#authors {
+    font-size: 18px;
+    font-style: italic;
+}
 
 .menu {
     /*margin-right: 8px;*/
