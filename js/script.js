@@ -63,6 +63,11 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".menu_but")[Math.round(window.pageYOffset / window.innerHeight)].classList.add("but_active")
 })
 
+document.getElementById("button-donate").addEventListener('click', function () {
+    document.getElementById("button-donate").classList.add("none")
+    document.getElementById("form-donate").classList.remove("none")
+})
+
 document.getElementById("audio").addEventListener('play', renderer)
 
 document.getElementById("play1").addEventListener('click', function (){
@@ -100,40 +105,30 @@ document.querySelectorAll(".menu_but").forEach(function (e, index) {
 })
 
 document.querySelector(".page").addEventListener("wheel", function (e) {
-    // console.log(e)
+     console.log(e)
     if (e.deltaY > 0) {
         window.scrollTo({
-            top: e.view.pageYOffset + window.innerHeight,
-            behavior: "smooth"
-        });
-        let i = 0
-        while (i < 3) {
-            let arr = document.querySelectorAll(".menu_but")
-            if (arr[i].classList.contains("but_active")) {
-                if (i !== 2) {
-                    arr[i].classList.remove("but_active")
-                    arr[++i].classList.add("but_active")
-                    break
-                }
-            }
-            i++
-        }
-    } else {
-        window.scrollTo({
-            top: e.view.pageYOffset - window.innerHeight,
+            top: window.innerHeight * Math.round(e.view.pageYOffset / window.innerHeight + 1),
             behavior: "smooth"
         });
         document.querySelectorAll(".menu_but").forEach(function (e, i) {
-            if (e.classList.contains("but_active")) {
-                if (i !== 0) {
-                    e.classList.remove("but_active")
-                    document.querySelectorAll(".menu_but")[--i].classList.add("but_active")
-                }
-            }
+            if (Math.round(window.pageYOffset / window.innerHeight) === i - 1) {
+                e.classList.add("but_active")
+            } else e.classList.remove("but_active")
+        })
+    } else {
+        window.scrollTo({
+            top: window.innerHeight * Math.round(e.view.pageYOffset / window.innerHeight - 1),
+            behavior: "smooth"
+        });
+        document.querySelectorAll(".menu_but").forEach(function (e, i) {
+            if (Math.round(window.pageYOffset / window.innerHeight) === i + 1) {
+                e.classList.add("but_active")
+            } else e.classList.remove("but_active")
         })
     }
 })
 
 if(window.matchMedia("only screen and (orientation:portrait)").matches) {
-    document.getElementById("audio_source").src = "mp3/02_avtoportret_mastering.mp3"
+    // document.getElementById("audio_source").src = "mp3/02_avtoportret_mastering.mp3"
 } else document.body.style.overflow = "hidden"
