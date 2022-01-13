@@ -477,6 +477,10 @@ details{
         width: 100%;
     }
 
+    .donations {
+        height: 200vh;
+    }
+
     .donate {
         margin-left: 0;
         margin-top: 30px;
@@ -509,22 +513,22 @@ details{
 
     .space0 {
         width: 0;
-        height: 20%;
+        height: 6%;
     }
 
     .donations-first {
         height: 80%;
-        justify-content: flex-start;
+        /*justify-content: flex-start;*/
     }
 
     .donations-text {
         width: 75%;
-        height: 30%;
+        height: 20%;
     }
 
     .fees {
         width: 75%;
-        height: 30%;
+        height: 20%;
     }
 
     .donations-main {
