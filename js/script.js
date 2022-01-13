@@ -1,6 +1,6 @@
 renderer = function() {
 
-    console.log("hello");
+    // console.log("hello");
     let audio = document.getElementById("audio");
     audio.load();
     audio.play();
@@ -19,7 +19,7 @@ renderer = function() {
     analyser.fftSize = 256;
 
     let bufferLength = analyser.frequencyBinCount;
-    console.log(bufferLength);
+    // console.log(bufferLength);
 
     let dataArray = new Uint8Array(bufferLength);
 
