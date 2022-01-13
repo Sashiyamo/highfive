@@ -500,7 +500,8 @@ details{
     }
 
     .space {
-        height: 15%;
+        height: 10%;
+        width: 100%;
     }
 
     #authors {
@@ -558,5 +559,9 @@ details{
         width: 70px;
         height: 70px;
         margin-right: 30px;
+    }
+
+    .albums {
+        height: 150vh;
     }
 }
