@@ -219,11 +219,11 @@ span {
     color: white;
     font-size: 20px;
     z-index: 11;
-    height: 270px;
+    height: 30%;
 }
 
 .donations-text {
-    width: 32%;
+    width: 35%;
     height: 100%;
     /*margin-right: 100px;*/
     display: flex;
@@ -242,14 +242,15 @@ span {
 }
 
 .fee {
+    margin-top: 54px;
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-end;
     /*margin-top: 50px;*/
 }
 
 .fees {
-    width: 32%;
+    width: 35%;
     height: 100%;
     display: flex;
     flex-direction: column;
