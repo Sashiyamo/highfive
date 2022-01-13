@@ -452,7 +452,7 @@ details{
     .menu button {
         /*display: none;*/
         font-size: 30px;
-        width: 150px;
+        width: 160px;
         height: 100px;
     }
 
@@ -509,11 +509,12 @@ details{
 
     .space0 {
         width: 0;
-        height: 15%;
+        height: 20%;
     }
 
     .donations-first {
         height: 80%;
+        justify-content: flex-start;
     }
 
     .donations-text {
