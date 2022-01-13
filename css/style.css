@@ -442,7 +442,7 @@ details{
 
 @media only screen and (orientation:portrait) {
     span {
-        font-size: 200%;
+        font-size: 180%;
     }
 
     .hat {
@@ -468,7 +468,7 @@ details{
     }
 
     .r1 {
-        font-size: 200%;
+        font-size: 180%;
     }
 
     .fee {
@@ -478,7 +478,7 @@ details{
     }
 
     .donations {
-        height: 200vh;
+        height: 110vh;
     }
 
     .donate {
@@ -503,21 +503,18 @@ details{
         height: 15%;
     }
 
-    .donations-first {
-        flex-direction: column;
-    }
-
     #authors {
         font-size: 190%;
     }
 
     .space0 {
         width: 0;
-        height: 6%;
+        height: 12%;
     }
 
     .donations-first {
-        height: 80%;
+        flex-direction: column;
+        height: 100%;
         /*justify-content: flex-start;*/
     }
 
