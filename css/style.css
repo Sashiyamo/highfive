@@ -565,4 +565,8 @@ details{
     .albums {
         height: 150vh;
     }
+
+    #content {
+        display: none;
+    }
 }
