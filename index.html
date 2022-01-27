@@ -26,10 +26,26 @@
         <div class="menu">
             <button id="main" class="menu_but">Главная</button>
             <button id="donation" class="menu_but">Сборы</button>
+            <button id="gallery" class="menu_but">Галерея</button>
             <button id="albums" class="menu_but">Альбомы</button>
             <div class="contacts menu">
                 <a href="https://vk.com/rifmatizm" target="_blank"><img id="vk" src="img/vk.svg"></a>
                 <a href="https://www.youtube.com/channel/UC347WUHsLnwlBMnDKhd1usA" target="_blank"><img id="youtube" src="img/youtube.svg"></a>
+            </div>
+        </div>
+    </div>
+    <div class="news-block">
+        <div id="get_news">
+            <img id="new" src="img/new.png">
+        </div>
+        <div class="scroll-news">
+            <div class="news">
+                <ul>
+                    <li><span>27.01.2022</span>У группы вышел трек "Автопортет", который можно послушать на всех известных платформах: Apple Music, Spotify, VK, Яндекс музыка. Также вы можете его послушать на официальном сайте takefive.pro. <br> P.S. Загляни на вкладку сборы, там свежие новости о записи нового альбома)</li>
+                    <li><span>26.01.2022</span>Была создана секция с фотоальбомами на сайте</li>
+                    <li><span>24.01.2022</span>Был создан новостной блок на сайте группы</li>
+                    <li><span>05.01.2022</span>Был создан сайт группы</li>
+                </ul>
             </div>
         </div>
     </div>
@@ -87,7 +103,7 @@
                                 <input type="hidden" name="need-phone" value="false"/>
                                 <input type="hidden" name="need-address" value="false"/>
                                 <!--                            <label><input type="radio" name="paymentType" value="PC"/>ЮMoney</label>-->
-                                <input type="hidden" name="successURL" value="https://highfive-iota.vercel.app/"/> <!--страница возврата-->
+                                <input type="hidden" name="successURL" value="http://takefive.pro/"/> <!--страница возврата-->
                                 <input type="hidden" name="paymentType" value="AC"/>
                                 <input id="go" type="submit" value="" />
                             </form>
@@ -99,6 +115,46 @@
         </div>
     </section>
     <section id="section_3">
+        <div class="gallery">
+            <div class="folders">
+                <div id="photo_001" class="folder"><img src="img/folder.png"><span>2012 Уокер <br> фото</span></div>
+                <div id="photo_002" class="folder"><img src="img/folder.png"><span>2013 ЧаплинХолл <br> фото</span></div>
+<!--                <div id="photo_003" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_004" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_005" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_006" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_007" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_008" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_009" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_010" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_011" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_012" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_013" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+<!--                <div id="photo_014" class="folder"><img src="img/folder.png"><span>Первый альбом</span></div>-->
+            </div>
+            <div class="show">
+                <div class="main-photo">
+                    <div class="cur_photo">
+
+                    </div>
+                    <div id="close-show">
+                        <img src="img/close.png">
+                    </div>
+                    <div id="prev-photo">
+                        <img src="img/arrow_right.png">
+                    </div>
+                    <div id="next-photo">
+                        <img src="img/arrow_right.png">
+                    </div>
+                </div>
+                <div class="previews">
+                    <div class="minis">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="section_4">
         <div class="albums">
             <div id="alb1" class="album">
                 <div class="album_1">

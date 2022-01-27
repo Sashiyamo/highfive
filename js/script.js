@@ -133,29 +133,140 @@ document.querySelectorAll(".menu_but").forEach(function (e, index) {
 })
 
 document.querySelector(".page").addEventListener("wheel", function (e) {
-     // console.log(e)
-    if (e.deltaY > 0) {
-        window.scrollTo({
-            top: window.innerHeight * Math.round(e.view.pageYOffset / window.innerHeight + 1),
-            behavior: "smooth"
-        });
-        document.querySelectorAll(".menu_but").forEach(function (e, i) {
-            if (Math.round(window.pageYOffset / window.innerHeight) === i - 1) {
-                e.classList.add("but_active")
-            } else if (i < 2) e.classList.remove("but_active")
+    if (e.path.indexOf(document.querySelector(".news")) == -1 && e.path.indexOf(document.querySelector(".minis")) == -1) {
+        if (e.deltaY > 0) {
+            window.scrollTo({
+                top: window.innerHeight * Math.round(e.view.pageYOffset / window.innerHeight + 1),
+                behavior: "smooth"
+            });
+            document.querySelectorAll(".menu_but").forEach(function (e, i) {
+                if (Math.round(window.pageYOffset / window.innerHeight) === i - 1) {
+                    e.classList.add("but_active")
+                } else if (i < 3) e.classList.remove("but_active")
+            })
+        } else {
+            window.scrollTo({
+                top: window.innerHeight * Math.round(e.view.pageYOffset / window.innerHeight - 1),
+                behavior: "smooth"
+            });
+            document.querySelectorAll(".menu_but").forEach(function (e, i) {
+                if (Math.round(window.pageYOffset / window.innerHeight) === i + 1) {
+                    e.classList.add("but_active")
+                } else if (i > 0) e.classList.remove("but_active")
+            })
+        }
+    }
+})
+
+document.getElementById('get_news').addEventListener('click', function () {
+    if (document.querySelector('.news-block').classList.contains('news-block-out')) {
+        document.querySelector('.news-block').classList.remove('news-block-out')
+        document.querySelector("body").removeEventListener('click', function (e) {
+            if (e.path.indexOf(document.querySelector(".news-block")) == -1) {
+                if (document.querySelector('.news-block').classList.contains('news-block-out')) {
+                    document.querySelector('.news-block').classList.remove('news-block-out')
+                }
+            }
         })
     } else {
-        window.scrollTo({
-            top: window.innerHeight * Math.round(e.view.pageYOffset / window.innerHeight - 1),
-            behavior: "smooth"
-        });
-        document.querySelectorAll(".menu_but").forEach(function (e, i) {
-            if (Math.round(window.pageYOffset / window.innerHeight) === i + 1) {
-                e.classList.add("but_active")
-            } else if (i > 0) e.classList.remove("but_active")
+        document.querySelector('.news-block').classList.add('news-block-out')
+        document.querySelector("body").addEventListener('click', function (e) {
+            if (e.path.indexOf(document.querySelector(".news-block")) == -1) {
+                if (document.querySelector('.news-block').classList.contains('news-block-out')) {
+                    document.querySelector('.news-block').classList.remove('news-block-out')
+                }
+            }
         })
     }
 })
+
+document.querySelectorAll(".folder").forEach(function (e) {
+    e.addEventListener('click', function (e) {
+        document.querySelector('.folders').classList.add('folders-hide')
+        document.querySelector('.show').classList.add('show-displays')
+
+        let i = 1
+        let http = new XMLHttpRequest();
+
+        while(true) {
+            let elem = document.createElement('div');
+            elem.classList.add('mini')
+
+            http.open('HEAD', 'img/' + e.target.parentNode.id.substr(-3) + '/' + i + '.jpg', false);
+            http.send();
+
+            if (http.status != 404) {
+                elem.style.backgroundImage = 'url("../img/' + e.target.parentNode.id.substr(-3) + '/' + i + '.jpg")'
+                document.querySelector('.minis').appendChild(elem)
+                i++
+            } else break
+        }
+
+        document.querySelector('.cur_photo').style.backgroundImage = 'url("../img/' + e.target.parentNode.id.substr(-3) + '/' + 1 + '.jpg")'
+        document.querySelector('.minis').scrollLeft = 0
+    })
+})
+
+document.getElementById('close-show').addEventListener('click', function () {
+    document.querySelector('.folders').classList.remove('folders-hide')
+    document.querySelector('.show').classList.remove('show-displays')
+
+    document.querySelector('.minis').innerHTML = ""
+})
+
+document.getElementById('prev-photo').addEventListener('click', function () {
+    let photos = document.querySelectorAll('.mini')
+    let prev_i = null
+    photos.forEach(function (e, i) {
+        if (e.style.backgroundImage == document.querySelector('.cur_photo').style.backgroundImage) {
+            prev_i = i
+        }
+    })
+
+    if (prev_i && prev_i> 0) {
+        document.querySelector('.cur_photo').style.backgroundImage = photos[prev_i - 1].style.backgroundImage
+        // document.querySelector('.minis').scrollLeft = photos[prev_i - 1].offsetLeft
+        // document.querySelector('.minis').scrollTo(photos[prev_i - 1].offsetLeft, 0)
+    }
+})
+
+document.getElementById('next-photo').addEventListener('click', function () {
+    let photos = document.querySelectorAll('.mini')
+    let next_i = null
+    photos.forEach(function (e, i) {
+        if (e.style.backgroundImage == document.querySelector('.cur_photo').style.backgroundImage) {
+            next_i = i + 1
+        }
+    })
+
+    if (next_i && next_i < photos.length) {
+        document.querySelector('.cur_photo').style.backgroundImage = photos[next_i].style.backgroundImage
+        // document.querySelector('.minis').scrollLeft = photos[next_i].offsetLeft
+        // document.querySelector('.minis').scrollTo(photos[next_i].offsetLeft, 0)
+    }
+})
+
+document.querySelector('.minis').addEventListener('DOMNodeInserted', function (e) {
+    e.target.addEventListener('click', function (e) {
+        document.querySelector('.cur_photo').style.backgroundImage = e.target.style.backgroundImage
+    })
+})
+
+document.querySelector(".minis")
+    .addEventListener('wheel', function(event) {
+        let modifier
+        if (event.deltaMode == event.DOM_DELTA_PIXEL) {
+            modifier = 1;
+        } else if (event.deltaMode == event.DOM_DELTA_LINE) {
+            modifier = parseInt(getComputedStyle(this).lineHeight);
+        } else if (event.deltaMode == event.DOM_DELTA_PAGE) {
+            modifier = this.clientHeight;
+        }
+        if (event.deltaY != 0) {
+            this.scrollLeft += modifier * event.deltaY;
+            event.preventDefault();
+        }
+    });
 
 if(window.matchMedia("only screen and (orientation:portrait)").matches) {
     // document.getElementById("audio_source").src = "mp3/02_avtoportret_mastering.mp3"
