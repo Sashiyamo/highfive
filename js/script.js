@@ -185,24 +185,40 @@ document.querySelectorAll(".folder").forEach(function (e) {
         document.querySelector('.folders').classList.add('folders-hide')
         document.querySelector('.show').classList.add('show-displays')
 
-        let i = 1
-        let http = new XMLHttpRequest();
+        fetch("img/" + e.target.parentNode.id.substr(-3) + "/data.json")
+            .then(response => {
+                return response.json();
+            })
+            .then(jsondata => {
+                for (let i = 1; i <= jsondata.count; i++) {
+                    let elem = document.createElement('div');
+                    elem.classList.add('mini')
 
-        while(true) {
-            let elem = document.createElement('div');
-            elem.classList.add('mini')
+                    elem.style.backgroundImage = 'url("../img/' + e.target.parentNode.id.substr(-3) + '/' + i + '.webp")'
+                    document.querySelector('.minis').appendChild(elem)
+                }
+            });
 
-            http.open('HEAD', 'img/' + e.target.parentNode.id.substr(-3) + '/' + i + '.jpg', false);
-            http.send();
+        // let dataJSON = require('../img/' + e.target.parentNode.id.substr(-3) + '/data.json')
+        // let http = new XMLHttpRequest();
 
-            if (http.status != 404) {
-                elem.style.backgroundImage = 'url("../img/' + e.target.parentNode.id.substr(-3) + '/' + i + '.jpg")'
-                document.querySelector('.minis').appendChild(elem)
-                i++
-            } else break
-        }
 
-        document.querySelector('.cur_photo').style.backgroundImage = 'url("../img/' + e.target.parentNode.id.substr(-3) + '/' + 1 + '.jpg")'
+
+        // while(true) {
+        //     let elem = document.createElement('div');
+        //     elem.classList.add('mini')
+        //
+        //     http.open('HEAD', 'img/' + e.target.parentNode.id.substr(-3) + '/' + i + '.webp', false);
+        //     http.send();
+        //
+        //     if (http.status != 404) {
+        //         elem.style.backgroundImage = 'url("../img/' + e.target.parentNode.id.substr(-3) + '/' + i + '.webp")'
+        //         document.querySelector('.minis').appendChild(elem)
+        //         i++
+        //     } else break
+        // }
+
+        document.querySelector('.cur_photo').style.backgroundImage = 'url("../img/' + e.target.parentNode.id.substr(-3) + '/' + 1 + '.webp")'
         document.querySelector('.minis').scrollLeft = 0
     })
 })
