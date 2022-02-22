@@ -599,7 +599,7 @@ details {
 #prev-photo {
     position: absolute;
     z-index: 100;
-    top: 325px;
+    top: 50%;
     left: 25px;
 }
 
@@ -859,8 +859,12 @@ details {
         height: 70%;
     }
 
-    #next-photo {
+    #next-photo,#prev-photo {
         top: 50%;
+    }
+
+    #prev-photo img:hover {
+        filter: none;
     }
 
     #vyn1, #vyn2 {
