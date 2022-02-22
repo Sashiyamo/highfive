@@ -769,7 +769,7 @@ details {
     }
 
     .donations {
-        height: 110vh;
+        height: 150vh;
     }
 
     .donate {
@@ -788,7 +788,7 @@ details {
     .albums {
         /*display: block;*/
         flex-direction: column;
-        height: 100vh;
+        height: 130vh;
     }
 
     .space {
@@ -809,12 +809,14 @@ details {
 
     .donations-text {
         width: 75%;
-        height: 36%;
+        /*height: 36%;*/
+        height: auto;
     }
 
     .fees {
         width: 75%;
-        height: 36%;
+        /*height: 36%;*/
+        height: auto;
     }
 
     .donations-main {
@@ -849,6 +851,10 @@ details {
 
     #content {
         display: none;
+    }
+
+    .gallery {
+        /*height: 120vh;*/
     }
 
     .show {
