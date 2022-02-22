@@ -698,7 +698,7 @@ details {
     }
 
     .hat {
-        height: 70px;
+        height: 60px;
     }
 
     .menu button {
@@ -710,8 +710,8 @@ details {
 
     #vk,
     #youtube {
-        height: 40px;
-        width: 40px;
+        height: 30px;
+        width: 30px;
     }
 
     #five {
@@ -759,7 +759,7 @@ details {
     }
 
     #authors {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .fee {
