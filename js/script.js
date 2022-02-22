@@ -285,5 +285,6 @@ document.querySelector(".minis")
     });
 
 if(window.matchMedia("only screen and (orientation:portrait)").matches) {
+
     // document.getElementById("audio_source").src = "mp3/02_avtoportret_mastering.mp3"
 } else document.body.style.overflow = "hidden"

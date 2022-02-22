@@ -741,6 +741,7 @@ details {
 
     .text {
         width: 85%;
+        margin-top: 0;
     }
 
     .r1 {
@@ -860,5 +861,9 @@ details {
 
     #next-photo {
         top: 50%;
+    }
+
+    #vyn1, #vyn2 {
+        display: none;
     }
 }
