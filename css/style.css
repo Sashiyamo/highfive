@@ -720,27 +720,27 @@ details {
     }
 
     .news-block {
-        left: calc(100vw - 70px);
+        left: calc(100vw - 50px);
     }
 
     .news-block-out {
-        left: calc(100vw - 390px);
+        left: calc(100vw - 270px);
     }
 
     #get_news {
-        width: 70px;
-        height: 70px;
+        width: 50px;
+        height: 50px;
     }
 
     .news {
-        width: 300px;
+        width: 200px;
         height: 250px;
     }
 
     #new {
-        width: 40px;
-        height: 40px;
-        margin-left: 15px;
+        width: 30px;
+        height: 30px;
+        margin-left: 10px;
     }
 
     .text {
